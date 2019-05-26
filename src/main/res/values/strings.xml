@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Was geht?</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="geo_location_text">
+        Du kannst Dir durch die Standortbestimmung sofort die Events in deiner Region anzeigen lassen, und brauchst den Ort nicht von Hand auswählen.
+        Außerdem ist die Standortbestimmung so genau, dass Dir die Entfernungen zu den Locations angezeigt werden können.
+        Dein Standort wird automatisch einmal beim ersten Aufruf der APP bestimmt, und danach nur noch, falls Du den entsprechenden Button in der Ortsauswahl klickst oder die Karte aufrufst.
+    </string>
+</resources>

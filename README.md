@@ -9,6 +9,9 @@ zur zugehörigen Android-App. Bisher ist dies eine einfache Webview mit Import-F
   <img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="80px"/>
 </a>
 
+Merge-Request für F-Droid:
+https://gitlab.com/fdroid/fdroiddata/merge_requests/4895
+
 TODO:
 - Share-Funktion für beliebige Ziele
 

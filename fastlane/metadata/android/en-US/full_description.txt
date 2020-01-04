@@ -1,0 +1,15 @@
+Features:
+- Thousands of events per bigger city every month
+- Fulltext event- and location-search
+- Clearly arranged categories
+- Mostly with detailed information about each event, including text, photos, videos and links to the organizer / source
+- Simple search for events for children or with free entry
+- Location-Event-Listing
+- individual favorit- and blacklisting of locations
+- possibility to share choosen events to your android-event-calendar
+- Link to maps from detail view
+- Maps-view of the events with category-symbols
+- Preview of events in your area using media such as youtube, soundcloud, bandcamp,..
+- Small installation size & low memory consumption
+
+If your german city is not listed, or you are missing dates, please send us an email to info@wasgehtapp.de and we will try to find a solution as soon as possible! We are also happy about suggestions for improvement!

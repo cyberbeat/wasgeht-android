@@ -1,0 +1,15 @@
+Features:
+- Pro größerer Stadt monatlich tausende Veranstaltungen
+- Volltext Termin- und Locationsuche
+- Übersichtliche Kategorien-Einteilung
+- Meist mit Detail-Infos zu jeder Veranstaltung, inkl. Text, Fotos, Videos und Links zum Veranstalter / Quelle
+- Einfaches Suchen nach Veranstaltungen für Kinder oder Veranstaltungen mit freiem Eintritt
+- Location-Event-Listing
+- individuelles Favorit- und Blacklisting von Locations in der Übersicht
+- Möglichkeit zur Übernahme in der Android-Termin-Kalender (ab Android Version 4)
+- Google-Maps Anbindung in der Termin-Detail-Ansicht
+- Karten-Ansicht der Termine mit Kategorie-Symbolen und Links zu den Details
+- Einmaliges Feature: Vorschau auf die nächsten Termine in Deiner Region anhand von Medien wie Youtube Videos und Soundcloud/Bandcamp-Hörproben
+- Kleine Installationsgröße & Geringer Speicherverbrauch
+
+Falls Deine Stadt nicht dabei ist, bzw Dir Termine fehlen, schreibe uns gerne eine Mail an info@wasgehtapp.de und wir versuchen zeitnah Abhilfe zu schaffen! Wir freuen uns auch über Verbesserungsvorschläge! 

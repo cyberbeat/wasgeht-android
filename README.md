@@ -4,13 +4,12 @@
 "Was geht App?" ist eine deutschlandweite Veranstaltungswebseite (https://www.wasgehtapp.de). Hier befindet sich der offizielle Quellcode
 zur zugehörigen Android-App. Bisher ist dies eine einfache Webview mit Import-Funktion für den Android-Kalender.
 
-<!-- <a href=""><img src="https://f-droid.org/wiki/images/0/06/F-Droid-button_get-it-on.png"/></a> -->
-<a href="https://play.google.com/store/apps/details?id=de.cyberit.wasgeht">
-  <img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="80px"/>
-</a>
-
-Merge-Request für F-Droid:
-https://gitlab.com/fdroid/fdroiddata/merge_requests/4895
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+     alt="Get it on F-Droid"
+     height="80">](https://f-droid.org/packages/de.cyberit.wasgeht/)
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
+     alt="Get it on Google Play"
+     height="80">](https://play.google.com/store/apps/details?id=de.cyberit.wasgeht)
 
 TODO:
 - Share-Funktion für beliebige Ziele

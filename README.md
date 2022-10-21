@@ -11,7 +11,5 @@ zur zugehörigen Android-App. Bisher ist dies eine einfache Webview mit Import-F
      alt="Get it on Google Play"
      height="80">](https://play.google.com/store/apps/details?id=de.cyberit.wasgeht)
 
-TODO:
-- Share-Funktion für beliebige Ziele
 
 Als langfristiges Ziel wäre auch eine native App denkbar, JSON-Apis sind weitestgehend bereits vorhanden.

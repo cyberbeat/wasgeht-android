@@ -2,10 +2,9 @@ buildscript {
     repositories {
         mavenCentral()
         google()
-        jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:7.3.0'
     }
 }
 apply plugin: 'com.android.application'
@@ -19,22 +18,23 @@ repositories {
 }
 
 android {
-    compileSdkVersion 26
+    namespace 'de.cyberit.wasgeht'
+    compileSdk 33
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 26
-        versionCode 10
-        versionName '1.9'
+        targetSdk 33
+        versionCode 11
+        versionName '1.10'
     }
     productFlavors {
     }
     buildTypes {
     }
-    buildToolsVersion '26.0.2'
+    buildToolsVersion '33.0.0'
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:26.1.0'
-    compile 'com.android.support:appcompat-v7:26.1.0'
-    compile 'com.android.support:support-annotations:27.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'androidx.annotation:annotation:1.5.0'
 }

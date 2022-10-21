@@ -2,6 +2,7 @@ package de.cyberit.wasgeht;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.provider.CalendarContract;
 import android.provider.CalendarContract.Events;
@@ -15,6 +16,24 @@ public class JSObject {
 
     JSObject(Context c) {
         mContext = c;
+    }
+
+    @JavascriptInterface
+    public void share(String title, String url) {
+        try {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.setData(Uri.parse(url));
+            intent.putExtra(Intent.EXTRA_SUBJECT, title);
+            intent.putExtra(Intent.EXTRA_TITLE, title);
+            intent.putExtra(Intent.EXTRA_TEXT, title + ":\n" + url);
+            intent.setType("text/plain");
+
+        Intent shareIntent = Intent.createChooser(intent, "Veranstaltung teilen");
+        mContext.startActivity(shareIntent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @JavascriptInterface

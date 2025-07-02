@@ -3,7 +3,9 @@ package de.cyberit.wasgeht;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import androidx.core.app.ActivityCompat;
@@ -12,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.webkit.ConsoleMessage;
+import android.webkit.CookieManager;
 import android.webkit.GeolocationPermissions;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -24,23 +27,45 @@ public class MainActivity extends AppCompatActivity {
 
     private final int MY_PERMISSIONS_ACCESS_FINE_LOCATION = 1;
 
-    private final String MY_URL = "https://www.wasgehtapp.de?app=1";
+    private String MY_URL = "https://www.wasgehtapp.de/webapp/";
+
+    public void setStartPage() {
+        CookieManager cookieManager = CookieManager.getInstance();
+
+        String cookiesString = cookieManager.getCookie(MY_URL);
+
+        if (cookiesString!=null && cookiesString.contains("webapp=off")){
+            Log.d("Wasgehtapp", "Old Design");
+            MY_URL = "https://www.wasgehtapp.de/";
+        }
+
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setStartPage();
+
+        String myUrl = MY_URL;
+        Intent intent = getIntent();
+        if (intent != null) {
+            Uri data = intent.getData();
+            if (data != null) {
+                myUrl = intent.getDataString();
+            }
+        }
 
         setContentView(R.layout.activity_main);
-        mWebView = (WebView) findViewById(activity_main_webview);
+        mWebView = findViewById(activity_main_webview);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.setScrollbarFadingEnabled(true);
         mWebView.setWebViewClient(new MyAppWebViewClient());
         mWebView.getSettings().setGeolocationEnabled(true);
         mWebView.getSettings().setDomStorageEnabled(true);
         mWebView.getSettings().setGeolocationDatabasePath(getFilesDir().getPath());
-        if (Build.VERSION.SDK_INT >= 17) {
-            mWebView.getSettings().setMediaPlaybackRequiresUserGesture(false);
-        }
+        mWebView.getSettings().setMediaPlaybackRequiresUserGesture(false);
+
         mWebView.setWebChromeClient(new WebChromeClient() {
             public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
                 // callback.invoke(String origin, boolean allow, boolean remember);
@@ -75,11 +100,11 @@ public class MainActivity extends AppCompatActivity {
                             MY_PERMISSIONS_ACCESS_FINE_LOCATION);
                 }
             } else {
-                mWebView.loadUrl(MY_URL);
+                mWebView.loadUrl(myUrl);
             }
         } else {
 
-            mWebView.loadUrl(MY_URL);
+            mWebView.loadUrl(myUrl);
         }
 
     }
@@ -94,23 +119,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            mWebView.onPause();
-        }
+        mWebView.onPause();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            mWebView.onResume();
-        }
+        mWebView.onResume();
     }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if ((keyCode == KeyEvent.KEYCODE_BACK) && mWebView.canGoBack()) {
-            mWebView.goBack();
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (mWebView.canGoBack()) {
+                mWebView.goBack();
+            }
             return true;
         }
         return super.onKeyDown(keyCode, event);
@@ -118,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
+                                           String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode,permissions,grantResults);
         switch (requestCode) {
             case MY_PERMISSIONS_ACCESS_FINE_LOCATION: {
@@ -128,7 +151,6 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                 }
                 mWebView.loadUrl(MY_URL);
-                return;
             }
 
             // other 'case' lines to check for other

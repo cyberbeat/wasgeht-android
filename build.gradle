@@ -4,7 +4,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath 'com.android.tools.build:gradle:8.10.1'
     }
 }
 apply plugin: 'com.android.application'
@@ -19,22 +19,21 @@ repositories {
 
 android {
     namespace 'de.cyberit.wasgeht'
-    compileSdk 33
+    compileSdk 35
     defaultConfig {
-        minSdkVersion 14
-        targetSdk 33
-        versionCode 11
-        versionName '1.10'
+        minSdkVersion 21
+        targetSdk 35
+        versionCode 15
+        versionName '1.14'
     }
     productFlavors {
     }
     buildTypes {
     }
-    buildToolsVersion '33.0.0'
 }
 
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'androidx.annotation:annotation:1.5.0'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'androidx.annotation:annotation:1.9.1'
 }

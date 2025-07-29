@@ -13,6 +13,8 @@ import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.View;
+import android.view.WindowManager;
 import android.webkit.ConsoleMessage;
 import android.webkit.CookieManager;
 import android.webkit.GeolocationPermissions;
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 myUrl = intent.getDataString();
             }
         }
+
 
         setContentView(R.layout.activity_main);
         mWebView = findViewById(activity_main_webview);

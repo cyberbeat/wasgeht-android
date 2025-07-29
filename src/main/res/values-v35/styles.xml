@@ -1,10 +1,11 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Vollbild, kein Titel -->
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
-    </style>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
 
+    </style>
 </resources>
